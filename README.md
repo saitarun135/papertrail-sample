@@ -7,16 +7,16 @@
 
 `extension=sockets`
 
-`config/logging.php`
 
+4.Finally change like this `config/logging.php`
 `
 'papertrail' => [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => SyslogUdpHandler::class,
             'handler_with' => [
-                'host' => 'lgs6.papertrailapp.com',
-                'port' => 35377,
+                'host' => 'lgs6.papertrailapp.com', //don't use protocol either https,tcp,udp...
+                'port' => 35377, //it should be a number not a string
             ],
         ],
 `
